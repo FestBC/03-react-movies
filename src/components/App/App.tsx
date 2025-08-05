@@ -54,6 +54,15 @@ export default function App() {
 
   const handleClose = (): void => {
     setIsModalOpen(false);
+    setClickedMovie( {
+      id: 0,
+      poster_path: "",
+      backdrop_path: "",
+      title: "",
+      overview: "",
+      release_date: "",
+      vote_average: 0
+    } );
   }
 
   return (
