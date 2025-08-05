@@ -18,15 +18,7 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [clickedMovie, setClickedMovie] = useState<Movie>( {
-    id: 0,
-    poster_path: "",
-    backdrop_path: "",
-    title: "",
-    overview: "",
-    release_date: "",
-    vote_average: 0
-  } );
+  const [clickedMovie, setClickedMovie] = useState<Movie | null>(null);
 
   const handleSubmit = async (query: string) => {
     try {
@@ -54,6 +46,7 @@ export default function App() {
 
   const handleClose = (): void => {
     setIsModalOpen(false);
+    setClickedMovie(null);
   }
 
   return (
